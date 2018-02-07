@@ -1,0 +1,145 @@
+/*  Created By 一笑而过 2018/2/7 0007  */
+* {
+    margin-right: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::after {
+    box-sizing: border-box;
+}
+
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    /*border: 1px solid green;*/
+    justify-content: center;
+    background: #fee433;
+    align-items: center;
+}
+
+.wrapper {
+    width: 100%;
+    height: 165px;
+    /*border: 1px solid red;*/
+    position: relative;
+}
+
+.nose {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 12px;
+    border-color: black transparent transparent transparent; /*扇形鼻子*/
+    border-radius: 12px;
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    margin-left: -12px; /*让鼻子居中*/
+    /*transform: translateX(-50%);*/
+}
+.eye {
+    width: 49px;
+    height:49px;
+    background: #2e2e2e;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #000000;
+}
+.eye::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height:24px;
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    left:6px;
+    top: -1px;
+    border: 2px solid #000;
+}
+.eye.left {
+    right: 50%;
+    margin-right: 90px;
+}
+.eye.right {
+    left: 50%;
+    margin-left: 90px;
+}
+.face {
+    width: 68px;
+    height:68px;
+    background: #fc0d1c;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top:85px;
+}
+.face.left {
+    right: 50%;
+    margin-right:116px;
+}
+.face.right {
+    left: 50%;
+    margin-left:116px;
+}
+.upperLip {
+    height: 25px;
+    width: 64px;
+    background-color: #fee433;
+    border: 2px solid black;
+    position: absolute;
+    top: 45px;
+}
+.upperLip.left {
+    right:50%;
+    border-bottom-left-radius: 40px 25px; /*做个椭圆 只给左和下border*/
+    border-top: none;
+    border-right: none;
+    transform: rotate(-15deg);
+}
+.upperLip.right {
+    left:50%;
+    border-bottom-right-radius: 40px 25px;
+    border-top: none;
+    border-left: none;
+    transform: rotate(15deg);
+}
+.lowerLip {
+    width: 300px;
+    height:3500px;
+    /*background: #fc4a62;*/
+    background: #990513;
+    border-radius: 200px/2000px;
+    border: 2px solid black;
+    position: absolute;
+    bottom: 0px;
+    overflow: hidden;
+}
+.lowerLip-wrapper {
+    bottom:0px;
+    width:300px;
+    z-index: -1;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    height:110px;
+    overflow: hidden;
+    /*border:1px solid red;*/
+}
+
+.lowerLip::after {   /*椭圆 真正的下嘴唇*/
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    width: 100px;
+    height:100px;
+    background: #fc4a62;
+    left:50%;
+    margin-left: -50px;
+    border-radius: 50px;
+}
